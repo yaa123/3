@@ -7,7 +7,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(content_types=['text'])
 def echo_digits(message: Message):
-bot.reply_to(message, 'test')
+	bot.reply_to(message, 'test')
 	return
 
 
