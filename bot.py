@@ -8,7 +8,7 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(content_types=['text'])
 def echo_digits(message: Message):
 bot.reply_to(message, 'test')
-	pass
+	return
 
 
 bot.polling(timeout=60)
