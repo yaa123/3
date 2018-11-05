@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import telebot
-from telebot import types
 TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
@@ -26,15 +25,6 @@ def command_handler(message):
 def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
-
-@bot.inline_handler(lambda query: query.query == 'text')
-def query_text(inline_query):
-	try:
-		text = file(message.text.lower())
-		r = types.InlineQueryResultArticle('', 'Ошибка', types.InputTextMessageContent(text))
-		bot.answer_inline_query(inline_query.id, r )
-    except Exception as ex:
-        return
 
 
 bot.polling(none_stop=True)
