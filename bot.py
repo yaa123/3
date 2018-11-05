@@ -14,7 +14,12 @@ def command_handler(message):
 @bot.edited_message_handler(content_types=['text'])
 def echo_digits(message):
 	text = message.text.lower()
+			erro = file(text)
+			bot.reply_to(message, ('Ошибка ' + erro)
+
+def file(text) 
 	for line in myfile:
 		if text in line:
-			bot.reply_to(message, ('Ошибка ' + line.strip()))
+		err = line.strip()
+		return err
 bot.polling()
