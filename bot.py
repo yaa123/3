@@ -23,8 +23,6 @@ def command_handler(message):
 @bot.edited_message_handler(content_types=['text'])
 def echo_digits(message):
 	text = file(message.text.lower())
-	for line in myfile:
-		if text in line:
-			bot.reply_to(message, ('Ошибка ' + text))
+	bot.reply_to(message, ('Ошибка ' + text))
 
 bot.polling(none_stop=True)
