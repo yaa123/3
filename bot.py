@@ -9,12 +9,12 @@ myfile = open(inputfile, mode='r', encoding='UTF-8')
 
 @bot.message_handler(commands=['start'])
 def command_handler(message):
-    bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ_Альянс')
+	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ_Альянс')
 	pass
 	
 @bot.message_handler(commands=['help'])
 def command_handler(message):
-    bot.reply_to(message, 'Помощь')
+	bot.reply_to(message, 'Помощь')
 	pass
 	
 @bot.message_handler(commands=['error'])
