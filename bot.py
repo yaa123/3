@@ -6,7 +6,7 @@ inputfile = 'errorcode.txt'
 myfile = open(inputfile, mode='r', encoding='UTF-8')
 
 def file(text):
-	line == 0
+	line = 0
 	for line in myfile:
 		if text in line:
 			err = line.strip()
