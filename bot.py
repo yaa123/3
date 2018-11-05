@@ -5,12 +5,13 @@ bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
 myfile = open(inputfile, mode='r', encoding='UTF-8')
 @bot.message_handler(commands=['start'])
-def file (text):
+def file(text):
 	for line in myfile:
 		if text in line:
 			err = line.strip()
 			return err
 
+			
 def command_handler(message):
 	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ_Альянс')
 @bot.message_handler(commands=['help'])
