@@ -11,8 +11,7 @@ def file(text):
 			err = line.strip()
 			myfile.close()
 			return err
-		else err = 'Ошибка не найдена'
-			return err
+
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
