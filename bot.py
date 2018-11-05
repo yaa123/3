@@ -20,4 +20,4 @@ def echo_digits(message):
 		if text in line:
 			bot.reply_to(message, ('Ошибка ' + line.strip()))
 			pass
-bot.polling(none_stop=True)
+bot.infinity_polling(True)
