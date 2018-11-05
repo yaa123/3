@@ -13,13 +13,15 @@ def command_handler(message):
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
 def echo_digits(message):
-	text = message.text.lower()
-			erro = file(text)
-			bot.reply_to(message, ('Ошибка ' + erro)
-
-def file(text) 
+	text = file(message.text.lower())
 	for line in myfile:
 		if text in line:
-		err = line.strip()
-		return err
+			bot.reply_to(message, ('Ошибка ' + text)
+			
+def file (text):
+	for line in myfile:
+		if text in line:
+			err = line.strip()
+			return err
+			
 bot.polling()
