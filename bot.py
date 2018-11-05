@@ -10,6 +10,7 @@ def file(text):
 		if text in line:
 			err = line.strip()
 			myfile.close()
+			return err
 		else err = 'Ошибка не найдена'
 			return err
 
