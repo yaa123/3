@@ -9,8 +9,8 @@ def file(text):
 	for line in myfile:
 		if text in line:
 			err = line.strip()
-			return err
 			line == 0
+			return err
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
