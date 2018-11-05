@@ -24,5 +24,5 @@ def command_handler(message):
 def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
-
+	text == 0
 bot.polling(none_stop=True)
