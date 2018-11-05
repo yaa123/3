@@ -19,5 +19,5 @@ def echo_digits(message):
 	for line in myfile:
 		if text in line:
 			bot.reply_to(message, ('Ошибка ' + line.strip()))
-			pass
+			return
 bot.infinity_polling(True)
