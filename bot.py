@@ -3,13 +3,13 @@ import telebot
 TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
-myfile = open(inputfile, mode='r', encoding='UTF-8')
 
 def file(text):
-	line = 0
+	myfile = open(inputfile, mode='r', encoding='UTF-8')
 	for line in myfile:
 		if text in line:
 			err = line.strip()
+			myfile.close()
 			return err
 
 @bot.message_handler(commands=['start'])	
@@ -25,5 +25,4 @@ def command_handler(message):
 def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
-	text == 0
 bot.polling(none_stop=True)
