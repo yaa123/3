@@ -23,7 +23,7 @@ def error (message):
 
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
-def echo_digits(message: Message):
+def echo_digits(message):
 	bot.reply_to(message, 'test')	
 
 bot.polling(timeout=60)
