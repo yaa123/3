@@ -17,4 +17,4 @@ def echo_digits(message):
 	for line in myfile:
 		if text in line:
 			bot.reply_to(message, 'ошибка' + line.strip())
-bot.polling(timeout=60)
+bot.polling(none_stop=True)
