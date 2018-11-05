@@ -10,6 +10,7 @@ def file(text):
 		if text in line:
 			err = line.strip()
 			return err
+			line == 0
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
