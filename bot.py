@@ -10,6 +10,7 @@ def file(text):
 		if text in line:
 			err = line.strip()
 			myfile.close()
+		else err = 'Ошибка не найдена'
 			return err
 
 @bot.message_handler(commands=['start'])	
