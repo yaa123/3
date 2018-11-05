@@ -14,7 +14,7 @@ def command_handler(message):
 	bot.reply_to(message, 'Помощь')
 
 
-@bot.message_handler(commands=['error'])
+@bot.message_handler(content_types=['text'])
 def error (message):
 	text = message.text.lower()
 	for line in myfile:
