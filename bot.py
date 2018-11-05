@@ -15,6 +15,7 @@ def command_handler(message):
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
 def echo_digits(message):
+	line = 0
 	text = message.text.lower()
 	for line in myfile:
 		if text in line:
