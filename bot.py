@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import telebot
-TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
+TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
 myfile = open(inputfile, mode='r', encoding='UTF-8')
