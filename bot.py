@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!@atm72bot python
 import telebot
 TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
@@ -10,7 +10,9 @@ def file(text):
 		if text in line:
 			err = line.strip()
 			myfile.close()
-			return err
+		else:
+			err = 'не найдена'
+		return err
 
 
 @bot.message_handler(commands=['start'])	
