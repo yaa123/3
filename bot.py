@@ -3,7 +3,7 @@ import telebot
 TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
-#sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
+sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
 def file(text):
 	myfile = open(inputfile, mode='r', encoding='UTF-8')
 	for line in myfile:
