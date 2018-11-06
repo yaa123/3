@@ -41,11 +41,9 @@ def echo_digits(message):
 
 @bot.inline_handler(inline query: query)
 def query_text(inline_query):
-	try:
-		text = file(message.text.lower())
-		bot.answer_inline_query(inline_query.id, text, {cache_time: 0})
-	except Exception as e:
-		print(e)
+	text = file(message.text.lower())
+	bot.answer_inline_query(inline_query.id, text, {cache_time: 0})
+	
 
 
 bot.polling(none_stop=True)
