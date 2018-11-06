@@ -23,6 +23,11 @@ def command_handler(message):
 @bot.message_handler(commands=['help'])
 def command_handler(message):
 	bot.reply_to(message, 'Помощь')
+
+@bot.message_handler(commands=['error'])
+def echo_digits(message):
+	text = file(message.text.lower())
+	bot.reply_to(message, message)
 	
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
@@ -30,9 +35,5 @@ def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
 
-@bot.message_handler(commands=['error'])
-def echo_digits(message):
-	text = file(message.text.lower())
-	bot.reply_to(message, message)
 
 bot.polling(none_stop=True)
