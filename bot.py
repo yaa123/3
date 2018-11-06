@@ -10,9 +10,10 @@ def file(text):
 		if text in line:
 			err = line.strip()
 			myfile.close()
+			return err
 		else:
 			err = 'не найдена'
-		return err
+			return err
 
 
 @bot.message_handler(commands=['start'])	
