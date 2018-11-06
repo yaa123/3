@@ -28,9 +28,9 @@ def command_handler(message):
 def command_handler(message):
 	bot.reply_to(message, sticker_id)
 
-#@bot.message_handler(content_types=['sticker'])
-#def test(message):
-#	bot.reply_to(message, message.sticker)
+@bot.message_handler(content_types=['sticker'])
+def test(message):
+	bot.reply_to(message, message)
 	
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
