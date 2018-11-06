@@ -39,7 +39,7 @@ def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
 
-@bot.inline_handler(inline query: query)
+@bot.inline_handler(content_types=['text'])
 def query_text(inline_query):
 	text = file(message.text.lower())
 	bot.answer_inline_query(inline_query.id, text, {cache_time: 0})
