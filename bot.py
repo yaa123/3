@@ -22,7 +22,7 @@ def command_handler(message):
 	
 @bot.message_handler(commands=['help'])
 def command_handler(message):
-	bot.reply_to(message, 'Помощь')
+	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
 
 @bot.message_handler(commands=['error'])
 def echo_digits(message):
