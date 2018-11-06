@@ -42,8 +42,7 @@ def echo_digits(message):
 @bot.inline_handler(content_types=['text'])
 def query_text(inline_query):
 	text = file(message.text.lower())
-	bot.answer_inline_query(inline_query.id, text, {cache_time: 0})
-	
+	bot.answer_inline_query(inline_query.id, text)
 
 
 bot.polling(none_stop=True)
