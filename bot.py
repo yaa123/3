@@ -24,9 +24,9 @@ def command_handler(message):
 def command_handler(message):
 	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
 
-#@bot.message_handler(commands=['edik'])
-#@def command_handler(message):
-#	bot.reply_to(message, message.sticker_id)
+@bot.message_handler(commands=['edik'])
+@def command_handler(message):
+	bot.reply_to(message, sticker_id)
 
 @bot.message_handler(content_types=['sticker'])
 def test(message):
