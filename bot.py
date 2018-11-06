@@ -30,5 +30,9 @@ def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
 
+@bot.message_handler(commands=['error'])
+def echo_digits(message):
+	text = file(message.text.lower())
+	bot.reply_to(message, ('Ошибка ' + text))
 
 bot.polling(none_stop=True)
