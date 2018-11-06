@@ -4,6 +4,7 @@ TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
 sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
+
 def file(text):
 	myfile = open(inputfile, mode='r', encoding='UTF-8')
 	for line in myfile:
@@ -37,6 +38,14 @@ def test(message):
 def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
+
+@bot.inline_handler(inline query: query)
+def query_text(inline_query):
+	try:
+		text = file(message.text.lower())
+		bot.answer_inline_query(inline_query.id, text, {cache_time: 0})
+	except Exception as e:
+		print(e)
 
 
 bot.polling(none_stop=True)
