@@ -33,6 +33,6 @@ def echo_digits(message):
 @bot.message_handler(commands=['error'])
 def echo_digits(message):
 	text = file(message.text.lower())
-	bot.reply_to(message, ('Ошибка ' + text))
+	bot.reply_to(message, message)
 
 bot.polling(none_stop=True)
