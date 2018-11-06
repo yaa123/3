@@ -26,7 +26,7 @@ def command_handler(message):
 
 @bot.message_handler(commands=['edik'])
 def command_handler(message):
-	bot.reply_to(message, message.sticker_id)
+	bot.reply_to(message.sticker, sticker_id)
 
 @bot.message_handler(content_types=['sticker'])
 def test(message):
