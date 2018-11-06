@@ -11,7 +11,7 @@ def file(text):
 			err = line.strip()
 			myfile.close()
 			return err
-		else:
+	else:
 			err = 'не найдена'
 			return err
 
