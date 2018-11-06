@@ -18,16 +18,15 @@ def file(text):
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
-	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ_Альянс')
+	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ-Альянс')
 	
 @bot.message_handler(commands=['help'])
 def command_handler(message):
 	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
 
-@bot.message_handler(commands=['error'])
-def echo_digits(message):
-	text = file(message.text.lower())
-	bot.reply_to(message, message)
+@bot.message_handler(content_types=['sticker'])
+def test(message):
+	bot.reply_to(message, message.sticker)
 	
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
