@@ -8,6 +8,7 @@ sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
 def file(text):
 	myfile = open(inputfile, mode='r', encoding='UTF-8')
 	for line in myfile:
+		text=text.replace('/','')
 		if text in line:
 			err = line.strip()
 			myfile.close()
