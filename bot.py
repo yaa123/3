@@ -43,9 +43,9 @@ def command_handler(message):
 		myfile = open(inputfile, mode='r+')
 		for line in myfile:
 			if text in line:
-			myfile.del(line)
-			myfile.close()
-			bot.reply_to(message, 'Ошибка удалена:' + text)
+				del myfile(line)
+				myfile.close()
+				bot.reply_to(message, 'Ошибка удалена:' + text)
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
