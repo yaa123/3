@@ -34,25 +34,6 @@ def command_handler_add(message):
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
-@bot.message_handler(commands=['del'])	
-def command_handler_del(message):
-	id = message.from_user.id
-	text = message.text.lower()
-	text = text[4:]
-	if id == 148134609:
-		myfile = open(inputfile, mode='r')
-		lines = my.readlines()
-		myfile.close()
-		myfile = open(inputfile, mode='w')
-		for line in myfile:
-			if text in lines:
-				myfile.write(line)
-				myfile.close()
-				bot.reply_to(message, 'Ошибка удалена:' + text)
-			else:
-				bot.reply_to(message, 'не нашнл!' )
-	else:
-		bot.reply_to(message, 'Вы не можете удалять ошибки!' )
 
 @bot.message_handler(commands=['help'])
 def command_handler_hel(message):
