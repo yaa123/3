@@ -26,7 +26,7 @@ def command_handler(message):
 	id = message.from_user.id
 	text = message.text.lower()
 	text = text[:2]
-	if id == '148134609':
+	if id == 148134609:
 		bot.reply_to(message, message)
 	else:
 		bot.reply_to(message, 'нет' )
