@@ -27,9 +27,9 @@ def command_handler(message):
 	text = message.text.lower()
 	text = text[:2]
 	if id == 148134609:
-		bot.reply_to(message, message)
+		bot.reply_to(message, text)
 	else:
-		bot.reply_to(message, 'нет' )
+		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
 	
 @bot.message_handler(commands=['help'])
