@@ -40,10 +40,10 @@ def command_handler(message):
 	text = message.text.lower()
 	text = text[4:]
 	if id == 148134609:
-		myfile = open(inputfile, mode='rw', encoding='UTF-8')
+		myfile = open(inputfile, mode='r+')
 		for line in myfile:
 			if text in line:
-			line = del
+			myfile.del(line)
 			myfile.close()
 			bot.reply_to(message, 'Ошибка удалена:' + text)
 	else:
