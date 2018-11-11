@@ -25,7 +25,7 @@ def command_handler(message):
 def command_handler(message):
 	id = message.from_user.id
 	text = message.text.lower()
-	text = text[0:4]
+	text = text[4:]
 	if id == 148134609:
 		bot.reply_to(message, text)
 	else:
