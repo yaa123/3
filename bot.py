@@ -23,10 +23,11 @@ def command_handler(message):
 
 @bot.message_handler(commands=['add'])	
 def command_handler(message):
+	id = message.from_user.id
 	if message.from_user.id == '148134609':
 		bot.reply_to(message, 'Ошибка добавлена!')
 	else:
-		bot.reply_to(message, 'Вы не можете добавлять ошибки!')
+		bot.reply_to(message, id)
 
 	
 @bot.message_handler(commands=['help'])
