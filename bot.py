@@ -27,7 +27,7 @@ def command_handler_add(message):
 	text = message.text.lower()
 	text = text[4:]
 	if id == 148134609:
-		myfile = open(inputfile, mode='a')
+		myfile = open(inputfile, mode='r')
 		myfile.write('\n' + text)
 		myfile.close()
 		bot.reply_to(message, 'Ошибка добавлена:' + text)
@@ -40,9 +40,13 @@ def command_handler_del(message):
 	text = message.text.lower()
 	text = text[4:]
 	if id == 148134609:
-		myfile = open(inputfile, mode='+')
+		myfile = open(inputfile, mode='r')
+		lines = my.readlines()
+		myfile.close()
+		myfile = open(inputfile, mode='w')
 		for line in myfile:
-			if text in line:
+			if text in lines:
+				myfile.write(line)
 				myfile.close()
 				bot.reply_to(message, 'Ошибка удалена:' + text)
 			else:
