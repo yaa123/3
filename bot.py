@@ -22,7 +22,7 @@ def command_handler(message):
 	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ-Альянс')
 
 @bot.message_handler(commands=['add'])	
-def command_handler(message):
+def command_handler_add(message):
 	id = message.from_user.id
 	text = message.text.lower()
 	text = text[4:]
@@ -35,7 +35,7 @@ def command_handler(message):
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
 @bot.message_handler(commands=['del'])	
-def command_handler(message):
+def command_handler_del(message):
 	id = message.from_user.id
 	text = message.text.lower()
 	text = text[4:]
@@ -43,27 +43,26 @@ def command_handler(message):
 		myfile = open(inputfile, mode='rw')
 		for line in myfile:
 			if text in line:
-				myfile.del(line)
 				myfile.close()
 				bot.reply_to(message, 'Ошибка удалена:' + text)
 	else:
 		bot.reply_to(message, 'Вы не можете удалять ошибки!' )
 
 @bot.message_handler(commands=['help'])
-def command_handler(message):
+def command_handler_hel(message):
 	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
 
 @bot.message_handler(commands=['edik'])
-def command_handler(message):
+def command_handler_ed(message):
 	bot.send_sticker(message.chat.id, sticker_id)
 
 @bot.message_handler(content_types=['sticker'])
-def test(message):
+def sti(message):
 	bot.reply_to(message, message)
-	
+
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
-def echo_digits(message):
+def err(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
 
