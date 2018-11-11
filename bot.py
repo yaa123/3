@@ -24,7 +24,7 @@ def command_handler(message):
 @bot.message_handler(commands=['add'])	
 def command_handler(message):
 	id = message.from_user.id
-	text = file(message.text.lower())
+	text = message.text.lower()
 	text = text[:2]
 	if id == '148134609':
 		bot.reply_to(message, 'Ошибка добавлена!', id, text)
