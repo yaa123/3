@@ -45,6 +45,8 @@ def command_handler_del(message):
 			if text in line:
 				myfile.close()
 				bot.reply_to(message, 'Ошибка удалена:' + text)
+			else:
+				bot.reply_to(message, 'не нашнл!' )
 	else:
 		bot.reply_to(message, 'Вы не можете удалять ошибки!' )
 
