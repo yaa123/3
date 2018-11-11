@@ -40,16 +40,15 @@ def command_handler(message):
 	text = message.text.lower()
 	text = text[4:]
 	if id == 148134609:
-		myfile = open(inputfile, mode='r+')
+		myfile = open(inputfile, mode='rw')
 		for line in myfile:
 			if text in line:
 				myfile.del(line)
 				myfile.close()
 				bot.reply_to(message, 'Ошибка удалена:' + text)
 	else:
-		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
+		bot.reply_to(message, 'Вы не можете удалять ошибки!' )
 
-	
 @bot.message_handler(commands=['help'])
 def command_handler(message):
 	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
