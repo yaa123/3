@@ -17,10 +17,17 @@ def file(text):
 			err = 'не найдена'
 			return err
 
-
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
 	bot.reply_to(message, 'Здравствуйте! Этот Бот создан для помощи ннженерам АТМ-Альянс')
+
+@bot.message_handler(commands=['add'])	
+def command_handler(message):
+	if message.from_user.id == '148134609':
+		bot.reply_to(message, 'Ошибка добавлена!')
+	else:
+		bot.reply_to(message, 'Вы не можете добавлять ошибки!')
+
 	
 @bot.message_handler(commands=['help'])
 def command_handler(message):
@@ -39,11 +46,5 @@ def test(message):
 def echo_digits(message):
 	text = file(message.text.lower())
 	bot.reply_to(message, ('Ошибка ' + text))
-
-#@bot.inline_handler(content_types=['text'])
-#def query_text(inline_query):
-#	text = file(message.text.lower())
-#	bot.answer_inline_query(inline_query.id, text)
-
 
 bot.polling(none_stop=True)
