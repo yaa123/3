@@ -27,7 +27,7 @@ def command_handler_add(message):
 	text = message.text.lower()
 	text = text[4:]
 	if id == 148134609:
-		myfile = open(inputfile, mode='r')
+		myfile = open(inputfile, mode='a')
 		myfile.write('\n' + text)
 		myfile.close()
 		bot.reply_to(message, 'Ошибка добавлена:' + text)
