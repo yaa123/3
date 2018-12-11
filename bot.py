@@ -44,7 +44,7 @@ def command_handler_add(message):
 def command_handler_otchet(message):
 	id = message.from_user.id
 	text = message.text.lower()
-	#text = text[8:]
+	text = text[4:]
 	if id in sp_id:
 		x=log(text,id)
 		bot.reply_to(message, 'Принято' )
