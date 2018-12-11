@@ -4,7 +4,7 @@ TOKEN = '798979267:AAEWbRlo36GcdtkvhM7AQ8psNpnx041nWUk'
 bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
 sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
-
+sp_id=[148134609,205821042,229932251]
 def file(text):
 	myfile = open(inputfile, mode='r', encoding='UTF-8')
 	for line in myfile:
@@ -16,6 +16,10 @@ def file(text):
 	else:
 			err = 'не найдена'
 			return err
+
+def log(kolichestvo,id):
+	with open('log.txt','a') as f:
+		f.write(str(datetime.now())+'    '+id+'    '+a+'\n')
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
@@ -34,6 +38,15 @@ def command_handler_add(message):
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
+@bot.message_handler(commands=['otchet'])	
+def command_handler_add(message):
+	id = message.from_user.id
+	text = message.text.lower()
+	if id in sp_id:
+		x=log(text,id)
+	else:
+		bot.reply_to(message, 'Иди нахуй!' )
+
 @bot.message_handler(commands=['help'])
 def command_handler_hel(message):
 	bot.reply_to(message, 'Отправьте мне код ошибки, чтобы получить описание')
@@ -45,6 +58,8 @@ def command_handler_ed(message):
 @bot.message_handler(content_types=['sticker'])
 def sti(message):
 	bot.reply_to(message, message)
+
+
 
 @bot.message_handler(content_types=['text'])
 @bot.edited_message_handler(content_types=['text'])
