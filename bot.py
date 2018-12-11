@@ -19,9 +19,9 @@ def file(text):
 			err = 'не найдена'
 			return err
 
-def log(kolichestvo,id):
+def log(a,id):
 	with open('log.txt','a') as f:
-		f.write(str(datetime.now())+'    '+id+'    '+a+'\n')
+		f.write(str(datetime.now())+'    '+ str(id) +'    '+ str(a) +'\n')
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
@@ -41,7 +41,7 @@ def command_handler_add(message):
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
 @bot.message_handler(commands=['otchet'])	
-def command_handler_add(message):
+def command_handler_otchet(message):
 	id = message.from_user.id
 	text = message.text.lower()
 	text = text[6:]
