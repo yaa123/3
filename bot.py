@@ -54,7 +54,6 @@ def command_handler_otchet(message):
 @bot.message_handler(commands=['get'])	
 def command_handler_get(message):
 	id = message.from_user.id
-	text = text[4:]
 	if id == 148134609:
 		doc = open('log.txt', 'rb')
 		bot.send_document(chat_id, doc)
