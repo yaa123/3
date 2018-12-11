@@ -57,7 +57,6 @@ def command_handler_get(message):
 	if id == 148134609:
 		doc = open('log.txt', 'rb')
 		bot.send_document(message.chat.id, doc)
-		bot.send_document(message.chat.id, "log")
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
