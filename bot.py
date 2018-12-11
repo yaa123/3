@@ -40,7 +40,7 @@ def command_handler_add(message):
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
 
-@bot.message_handler(commands=['otchet'])	
+@bot.message_handler(commands=['ot'])	
 def command_handler_otchet(message):
 	id = message.from_user.id
 	text = message.text.lower()
