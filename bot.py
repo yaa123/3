@@ -6,6 +6,7 @@ bot = telebot.TeleBot(TOKEN)
 inputfile = 'errorcode.txt'
 sticker_id = 'CAADAgADAQAD0VrUCH5Dfvp5fahZAg'
 sp_id=[148134609,205821042,229932251]
+isRunning=False
 
 def file(text):
 	myfile = open(inputfile, mode='r', encoding='UTF-8')
@@ -21,7 +22,9 @@ def file(text):
 
 def log(a,id):
 	with open('log.txt','a') as f:
-		f.write(str(datetime.now())+'    '+ str(id) +'    '+ str(a) +'\n')
+		a[0]=str(datetime.now())
+		a[1]=id
+		f.write(str(a)+'\n')
 
 @bot.message_handler(commands=['start'])	
 def command_handler(message):
@@ -39,6 +42,57 @@ def command_handler_add(message):
 		bot.reply_to(message, 'Ошибка добавлена:' + text)
 	else:
 		bot.reply_to(message, 'Вы не можете добавлять ошибки!' )
+
+@bot.message_handler(commands=['ot'])
+def start_handler(message):
+    global isRunning
+    if not isRunning:
+		id = message.from_user.id
+        chat_id = message.chat.id
+        text = message.text
+		if id in sp_id:
+			msg = bot.send_message(chat_id, 'Введите кличество полученных заявок')
+			bot.register_next_step_handler(msg, ask1)
+			isRunning = True
+		else:
+		bot.reply_to(message, 'Иди нахуй!' )
+			isRunning = False
+
+def ask1(message):
+    chat_id = message.chat.id
+    text = message.text
+    if not text.isdigit():
+        msg = bot.send_message(chat_id, 'Должно быть число, введите ещё раз.')
+        bot.register_next_step_handler(msg, ask1)
+        return
+    msg = bot.reply_to(chat_id, 'Принято')
+	a[2]=text
+    isRunning = True
+	bot.register_next_step_handler(msg, ask2)
+
+def ask2(message):
+    chat_id = message.chat.id
+    text = message.text
+    if not text.isdigit():
+        msg = bot.send_message(chat_id, 'Должно быть число, введите ещё раз.')
+        bot.register_next_step_handler(msg, ask2)
+        return
+    msg = bot.reply_to(chat_id, 'Принято')
+	a[3]=text
+    isRunning = True
+	bot.register_next_step_handler(msg, ask1)
+
+def ask3(message):
+    chat_id = message.chat.id
+    text = message.text
+    if not text.isdigit():
+        msg = bot.send_message(chat_id, 'Должно быть число, введите ещё раз.')
+        bot.register_next_step_handler(msg, ask2)
+        return
+    msg = bot.reply_to(chat_id, 'Принято')
+	a[4]=text
+    isRunning = False
+	x=log(a,id)
 
 @bot.message_handler(commands=['ot'])	
 def command_handler_otchet(message):
